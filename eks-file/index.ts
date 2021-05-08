@@ -39,8 +39,8 @@ const service = new k8s.core.v1.Service(`${appName}-svc`, {
 }, { provider: cluster.provider });
 
 // Export the URL for the load balanced service.
-export const url = service.status.loadBalancer.ingress[0].hostname;
+//export const url = service.status.loadBalancer.ingress[0].hostname;
 
 
 // Export the cluster's kubeconfig.
-export const kubeconfig = cluster.kubeconfig;
+//export const kubeconfig = cluster.kubeconfig;
