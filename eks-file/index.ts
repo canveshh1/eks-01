@@ -48,14 +48,14 @@ const deployment = new k8s.apps.v1.Deployment(`${appName}-dep`, {
     },
 }, { provider: cluster.provider });
 
-// const service = new k8s.core.v1.Service(`${appName}-svc`, {
-//     metadata: { labels: appLabels },
-//     spec: {
-//         type: "LoadBalancer",
-//         ports: [{ port: 80, targetPort: "http" }],
-//         selector: appLabels,
-//     },
-// }, { provider: cluster.provider });
+ const service = new k8s.core.v1.Service(`${appName}-svc`, {
+   metadata: { labels: appLabels },
+    spec: {
+        type: "LoadBalancer",
+       ports: [{ port: 80, targetPort: "http" }],
+         selector: appLabels,
+    },
+ }, { provider: cluster.provider });
 
 // Export the URL for the load balanced service.
 //export const url = service.status.loadBalancer.ingress[0].hostname;

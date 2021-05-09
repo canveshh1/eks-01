@@ -1,0 +1,4 @@
+name: nginx_eks
+runtime: dotnet
+description: // Deploy a small canary service (NGINX), to test that the cluster is
+  working.

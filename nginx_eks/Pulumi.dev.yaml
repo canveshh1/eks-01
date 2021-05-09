@@ -1,0 +1,2 @@
+config:
+  alicloud:region: // Export the URL for the load balanced service.

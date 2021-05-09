@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "deployment": {
+        "manifest": {
+            "time": "2021-05-09T15:23:41.1413292-04:00",
+            "magic": "761493b7c06be53ab28dbbcbbefba9bf890e3bb68434a7ce9bc7368c1b711661",
+            "version": "v3.1.0"
+        },
+        "secrets_providers": {
+            "type": "service",
+            "state": {
+                "url": "https://api.pulumi.com",
+                "owner": "canveshh",
+                "project": "nginx_test",
+                "stack": "dev"
+            }
+        }
+    }
+}
