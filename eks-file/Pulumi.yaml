@@ -1,3 +1,0 @@
-name: eks-cluster
-runtime: nodejs
-description: create an eks cluster

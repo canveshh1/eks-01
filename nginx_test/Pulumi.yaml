@@ -1,3 +1,0 @@
-name: nginx_test
-runtime: nodejs
-description: A minimal AWS TypeScript Pulumi program
