@@ -7,22 +7,21 @@ import * as awsx from "@pulumi/awsx";
 const vpc = new awsx.ec2.Vpc("newvpc", {
     cidrBlock: "10.0.0.0/16",
     numberOfAvailabilityZones: 2,
-    subnets: [
-      { type: "public" },
-      { type: "private" }],
+   // subnets: [
+     // { type: "public" },
+     // { type: "private" }],
  });
-var pubIp = vpc.privateSubnetIds
-var privateIp = vpc.publicSubnetIds
-var vpc_id = vpc.id+''
-const allVpcSubnets = aws.ec2.getSubnetIds({
-    vpcId: vpc_id,
-});
+//var pubIp = vpc.privateSubnetIds;
+////var privateIp = vpc.publicSubnetIds;
+//var vpc_id = vpc.id+'';
+//const allVpcSubnets = aws.ec2.getSubnetIds({
+  //  vpcId: vpc_id,
+//});
 
 // Create an EKS cluster inside of the VPC.
 const cluster = new eks.Cluster("my-cluster", {
     vpcId: vpc.id,
-    publicSubnetIds:pubIp,
-    privateSubnetIds:privateIp,
+    subnetIds: vpc.publicSubnetIds,
     nodeAssociatePublicIpAddress: false,
 });
 
